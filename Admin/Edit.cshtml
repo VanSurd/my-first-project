@@ -1,0 +1,44 @@
+@model PeopleSearchSite.Models.Person
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Редактировать человека</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Фамилия:</label>
+        <input asp-for="LastName" />
+    </div>
+
+    <div>
+        <label>Имя:</label>
+        <input asp-for="FirstName" />
+    </div>
+
+    <div>
+        <label>Отчество:</label>
+        <input asp-for="MiddleName" />
+    </div>
+
+    <div>
+        <label>Дата рождения:</label>
+        <input asp-for="BirthDate" type="date" />
+    </div>
+
+    <div>
+        <label>Новое фото (необязательно):</label>
+        <input type="file" name="photo" />
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.PhotoPath))
+    {
+        <p>Текущее фото:</p>
+        <img src="@Model.PhotoPath" style="max-width:150px;" />
+    }
+
+    <button type="submit">Сохранить</button>
+</form>

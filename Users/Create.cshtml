@@ -1,0 +1,35 @@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Добавить пользователя";
+}
+
+<h2>Добавить пользователя</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+<form method="post">
+    <div>
+        <label>Email (логин)</label><br />
+        <input type="email" name="email" required />
+    </div>
+
+    <div>
+        <label>Пароль</label><br />
+        <input type="password" name="password" required />
+    </div>
+
+    <div>
+        <label>Роль</label><br />
+        <select name="role">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </div>
+
+    <br />
+
+    <button type="submit">Создать</button>
+</form>

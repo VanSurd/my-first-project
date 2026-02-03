@@ -1,0 +1,24 @@
+@model PeopleSearchSite.Models.Person
+
+@{
+    ViewBag.Title = "Карточка человека";
+}
+
+<link rel="stylesheet" href="~/css/search.css" />
+
+<h2 class="page-title">Карточка человека</h2>
+
+<div class="card">
+
+    <p><strong>Фамилия:</strong> @Model.LastName</p>
+    <p><strong>Имя:</strong> @Model.FirstName</p>
+    <p><strong>Отчество:</strong> @Model.MiddleName</p>
+    <p><strong>Дата рождения:</strong> @Model.BirthDate.ToString("dd.MM.yyyy")</p>
+
+    @if (!string.IsNullOrEmpty(Model.PhotoPath))
+    {
+        <img src="@Model.PhotoPath" alt="Фото" class="photo" />
+    }
+
+    <a href="/Search/Index" class="back">← Назад к поиску</a>
+</div>

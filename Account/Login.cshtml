@@ -1,0 +1,47 @@
+@model PeopleSearchSite.Models.LoginViewModel
+@* Модель для формы логина *@
+
+@{
+    Layout = null;                                @* Отключаем стандартный Layout *@
+    ViewBag.Title = "Вход";                       @* Заголовок страницы *@
+}
+
+<link rel="stylesheet" href="~/css/login.css" />  @* Подключаем отдельный CSS файл для формы *@
+
+<div class="login-background">                  @* Фон страницы *@
+
+    <div class="login-card fade-in">            @* Карточка с формой и анимацией fade-in *@
+
+        <h2 class="login-title">Вход в систему</h2>  @* Заголовок формы *@
+
+        @* Вывод ошибки, если неверный логин/пароль *@
+        @if (ViewBag.Error != null)
+        {
+            <div class="login-error">@ViewBag.Error</div>
+        }
+
+        @* Форма логина *@
+        <form asp-action="Login" method="post" autocomplete="on">
+
+            @* Блок для логина *@
+            <div class="input-group">
+                <input id="Email" name="Email" type="text" placeholder=" " autocomplete="username" required />
+                @* Плавающий лейбл *@
+                <label for="Email">Логин</label>
+                <span class="input-icon">👤</span>  @* Иконка логина *@
+            </div>
+
+            @* Блок для пароля *@
+            <div class="input-group">
+                <input id="Password" name="Password" type="password" placeholder=" " autocomplete="current-password" required />
+                @* Плавающий лейбл *@
+                <label for="Password">Пароль</label>
+                <span class="input-icon">🔒</span>  @* Иконка пароля *@
+            </div>
+
+            @* Кнопка входа *@
+            <button type="submit" class="login-button">Войти</button>
+
+        </form>
+    </div>
+</div>

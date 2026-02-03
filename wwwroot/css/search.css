@@ -1,0 +1,88 @@
+/* Контейнер поиска */
+.search-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Строки поиска */
+.search-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Поля ввода */
+.search-input {
+    flex: 1;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ===== КНОПКИ — ФИКС ===== */
+.buttons-row {
+    display: flex;
+    justify-content: center;   /* центрируем кнопки */
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* ЖЁСТКО убираем растягивание */
+.buttons-row button {
+    min-width: 140px;          /* одинаковая ширина */
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    width: auto;
+}
+
+/* Кнопка поиска */
+.btn-search {
+    background-color: #007acc;
+    color: #fff;
+}
+
+.btn-search:hover {
+    background-color: #005f99;
+}
+
+/* Кнопка очистки */
+.btn-clear {
+    background-color: #cccccc;
+    color: #333;
+}
+
+.btn-clear:hover {
+    background-color: #aaaaaa;
+}
+
+/* Таблица */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results-table th {
+    background-color: #007acc;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.results-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.results-table tbody tr:hover {
+    background-color: #eef6ff;
+    cursor: pointer;
+}

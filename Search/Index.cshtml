@@ -1,0 +1,53 @@
+@model IEnumerable<PeopleSearchSite.Models.Person>
+
+@{
+    ViewBag.Title = "Поиск людей";
+}
+
+<link rel="stylesheet" href="~/css/search.css" />
+
+<div class="search-container">
+    <form method="get" asp-action="Index">
+
+        <!-- 1 строка: ФИО -->
+        <div class="search-row">
+            <input class="search-input" type="text" name="lastName" placeholder="Фамилия" value="@Context.Request.Query["lastName"]" />
+            <input class="search-input" type="text" name="firstName" placeholder="Имя" value="@Context.Request.Query["firstName"]" />
+            <input class="search-input" type="text" name="middleName" placeholder="Отчество" value="@Context.Request.Query["middleName"]" />
+        </div>
+
+        <!-- 2 строка: дата рождения + возраст -->
+        <div class="search-row">
+            <input class="search-input" type="date" name="birthDate" value="@Context.Request.Query["birthDate"]" />
+            <input class="search-input" type="number" name="ageFrom" placeholder="Возраст от" value="@Context.Request.Query["ageFrom"]" />
+            <input class="search-input" type="number" name="ageTo" placeholder="Возраст до" value="@Context.Request.Query["ageTo"]" />
+        </div>
+
+        <!-- 3 строка: кнопки -->
+        <div class="buttons-row">
+            <button type="submit" class="btn-search">Поиск</button>
+            <button type="button" class="btn-clear" onclick="this.form.reset()">Очистить поля</button>
+        </div>
+
+    </form>
+</div>
+
+<hr />
+
+<table class="results-table">
+    <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr onclick="location.href='@Url.Action("Details", "Search", new { id = person.Id })'">
+                <td>@person.LastName @person.FirstName @person.MiddleName</td>
+                <td>@person.BirthDate.ToString("dd.MM.yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

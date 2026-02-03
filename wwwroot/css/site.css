@@ -1,0 +1,94 @@
+/* Фон страницы логина */
+.login-background {
+  background-color: #f0f2f5;      /* Светло-серый фон */
+  display: flex;
+  justify-content: center;         /* Центрируем по горизонтали */
+  align-items: center;             /* Центрируем по вертикали */
+  height: 100vh;                   /* Высота на весь экран */
+}
+
+/* Контейнер формы */
+.login-container {
+  background-color: #ffffff;       /* Белый фон формы */
+  padding: 40px;                   /* Внутренние отступы */
+  border-radius: 12px;             /* Скруглённые углы */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Лёгкая тень */
+  width: 360px;                    /* Фиксированная ширина */
+  box-sizing: border-box;          /* Корректное вычисление ширины */
+}
+
+/* Заголовок формы */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007ACC;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ошибка входа */
+.login-error {
+  background-color: #ffd2d2;       /* Светло-красный фон */
+  color: #d8000c;                  /* Темно-красный текст */
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Группы полей ввода */
+.input-group {
+  position: relative;              /* Для позиционирования иконки */
+  margin-bottom: 25px;             /* Отступ между полями */
+}
+
+/* Поля ввода */
+.input-group input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;   /* Слева текст, справа место для иконки */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;               /* Плавный переход для фокуса */
+  box-sizing: border-box;
+}
+
+/* Фокус на поле ввода */
+.input-group input:focus {
+  border-color: #007ACC;           /* Синий бордер */
+  outline: none;                    /* Убираем стандартный контур */
+}
+
+/* Иконка в поле */
+.input-group .icon {
+  position: absolute;
+  right: 12px;                     /* Отступ справа */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;            /* Не мешает клику */
+  font-size: 18px;                 /* Размер иконки */
+  color: #888;                     /* Цвет иконки */
+  transition: 0.3s;                /* Плавное появление при фокусе */
+}
+
+/* Плавное изменение цвета иконки при фокусе */
+.input-group input:focus + .icon {
+  color: #007ACC;
+}
+
+/* Кнопка входа */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007ACC;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Эффект при наведении на кнопку */
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}

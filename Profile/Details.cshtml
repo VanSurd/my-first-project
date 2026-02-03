@@ -1,0 +1,19 @@
+@model PeopleSearchSite.Models.Person
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Карточка профиля</h2>
+
+<div style="display: flex; gap: 20px;">
+    <div>
+        <img src="@Model.PhotoPath" alt="Фото @Model.FirstName" />
+    </div>
+    <div>
+        <p><strong>Фамилия:</strong> @Model.LastName</p>
+        <p><strong>Имя:</strong> @Model.FirstName</p>
+        <p><strong>Отчество:</strong> @Model.MiddleName</p>
+        <p><strong>Дата рождения:</strong> @Model.BirthDate:yyyy-MM-dd</p>
+    </div>
+</div>
